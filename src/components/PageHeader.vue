@@ -49,8 +49,12 @@
             </span>
 
             <!-- TODO: add accessibility options. See https://developer.mozilla.org/en-US/docs/Web/CSS/transform#accessibility_concernss -->
-            <div id="drawer" class="drawer nav-menu-mobile h-100" :class="drawerIsOpen ? 'w-100' : ''">
-                <a v-for="v in menuElements" :href="v.href">{{ v.text }}</a>
+            <div id="drawer" class="drawer nav-menu-mobile h-100" :class="drawerIsOpen ? 'w-100' : ''">              
+                <a href="#" class="d-none" @click="toggleDrawer">&times;</a>
+
+                <div class="drawer-item" v-for="v in menuElements">
+                    <a :href="v.href">{{ v.text }}</a>
+                </div>
             </div>
         </div>
     </div>
@@ -108,9 +112,17 @@
         overflow-x: hidden;
         padding-top: 70px;
         transition: all 0.5s ease-out;
+        
+        .drawer-item {
+            width: 100%;
+
+            &:hover {
+                background-color: $color-white;
+            }
+        }
 
         a {
-            padding: 8px 8px 8px 32px;
+            padding:1rem 0 1rem 3rem;
             text-decoration: none;
             font-size: 2.5rem;
             color: $color-white;
@@ -119,7 +131,6 @@
             white-space: nowrap;
 
             &:hover {
-                background-color: $color-white;
                 color: $color-black;
             }
         }

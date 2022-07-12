@@ -1,0 +1,55 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Mono:wght@600&display=swap');
+$font-headers: 'Righteous', cursive;
+$font-content: 'Roboto Mono', monospace;
+
+// Colors
+$color-primary: #37243c;
+$color-secondary-tint: #c6a5e0;
+$color-secondary-shade: #3f3443;
+$color-black: #211e22;
+$color-white: #fcf8ff;
+$color-bg: #37243c;
+$color-text-primary: #37243c;
+$color-text-primary-tint: #c6a5e0;
+$color-text-secondary: #ffffffcc;
+$color-text-secondary-tint: #ffffff;
+
+// Taken from https://github.com/twbs/bootstrap/blob/547aa099ead7e4fa1ee99efedf44fbf346bb8394/scss/_variables.scss#L431
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+) !default;
+
+// Utilities
+
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.font-title {
+    font-family: $font-headers;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}

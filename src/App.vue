@@ -45,8 +45,6 @@
     const currentView = computed(() => {
         return routes[currentPath.value.slice(1) || '/'] || NotFound;
     });
-
-    console.log(currentView.value);
 </script>
 
 <template>

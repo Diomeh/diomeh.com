@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { ref, computed, Ref, DefineComponent } from 'vue';
+    import { ref, computed, Ref, DefineComponent, ComputedRef } from 'vue';
 
     import About         from './components/About.vue';
     import Contact       from './components/Contact.vue';
@@ -8,9 +8,9 @@
     import NotFound      from './components/NotFound.vue';
     import Work          from './components/Work.vue';
 
-    interface Route {
-        name: string;
-        component: DefineComponent<any, any, any>;
+    class Route {
+        constructor(public name: string, public component: DefineComponent<any, any, any>) {
+        }
     }
 
     interface RouteMap {
@@ -42,8 +42,8 @@
         currentPath.value = window.location.hash;
     });
 
-    const currentView = computed(() => {
-        return routes[currentPath.value.slice(1) || '/'] || NotFound;
+    const currentView: ComputedRef<Route> = computed(() => {
+        return routes[currentPath.value.slice(1) || '/'] || new Route('/404', NotFound);
     });
 </script>
 

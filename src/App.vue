@@ -4,8 +4,8 @@
     import About         from './components/About.vue';
     import Contact       from './components/Contact.vue';
     import Frontpage     from './components/Frontpage.vue';
+    import Navbar        from './components/Navbar.vue';
     import NotFound      from './components/NotFound.vue';
-    import PageHeader    from './components/PageHeader.vue';
     import Work          from './components/Work.vue';
 
     interface Route {
@@ -45,13 +45,11 @@
     const currentView = computed(() => {
         return routes[currentPath.value.slice(1) || '/'] || NotFound;
     });
-
-    console.log(currentView.value);
 </script>
 
 <template>
-    <PageHeader />
-    <component :is="currentView.component" />
+    <Navbar />
+    <component :is="currentView.component" :name="currentView.name" />
 </template>
 
 <style lang="scss">
@@ -69,8 +67,5 @@
 
     body {
         background-color: $color-bg;
-    }
-
-    #app {
     }
 </style>

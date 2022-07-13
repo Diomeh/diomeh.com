@@ -3,15 +3,13 @@ import App from './App.vue';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { icons } from './modules/font-awesome'; 
+import { icons } from './modules/font-awesome';
 
-import PageHeader from './components/PageHeader.vue';
-import Frontpage from './components/Frontpage.vue';
+import Breadcrumbs from './components/Breadcrumbs.vue';
 
 library.add(...icons);
 
 createApp(App)
-    .component('font-awesome-icon', FontAwesomeIcon)
-    .component('page-header', PageHeader)
-    .component('frontpage', Frontpage)
+    .component('Icon', FontAwesomeIcon)
+    .component('Breadcrumbs', Breadcrumbs)
     .mount('#app');

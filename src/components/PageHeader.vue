@@ -25,7 +25,6 @@
                 drawerIsOpen: false,
             };
         },
-        mounted: function () {},
 
         methods: {
             toggleDrawer: function () {
@@ -68,7 +67,6 @@
         @extend .font-title;
         color: $color-white;
     }
-
     .header-container {
         padding: 0.5rem;
         display: inline-flex;

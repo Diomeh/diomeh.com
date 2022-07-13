@@ -8,17 +8,17 @@
                     {
                         text: 'Hello,',
                         hrefText: 'About',
-                        href: '/about',
+                        href: '#/about',
                     },
                     {
                         text: 'I am',
                         hrefText: 'Work',
-                        href: '/work',
+                        href: '#/work',
                     },
                     {
                         text: 'David',
                         hrefText: 'Contact',
-                        href: '/contact',
+                        href: '#/contact',
                     },
                 ],
                 screenTapped: false
@@ -28,7 +28,6 @@
         methods: {
             toggleScreen: function (event: MouseEvent) {
                 // prevent toggle if clicking anchor tag
-                console.log((event.target as HTMLElement).nodeName)
                 if((event.target as HTMLElement).nodeName === 'A') {
                     return;
                 }

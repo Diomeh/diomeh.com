@@ -7,19 +7,19 @@
                 menuElements: [
                     {
                         text: 'Home',
-                        href: '/',
+                        href: '#/',
                     },
                     {
                         text: 'About Me',
-                        href: '/about',
+                        href: '#/about',
                     },
                     {
                         text: 'Work',
-                        href: '/work',
+                        href: '#/work',
                     },
                     {
                         text: 'Contact',
-                        href: '/contact',
+                        href: '#/contact',
                     },
                 ],
                 drawerIsOpen: false,
@@ -51,8 +51,8 @@
             <div id="drawer" class="drawer nav-menu-mobile h-100" :class="drawerIsOpen ? 'w-100' : ''">              
                 <a href="#" class="d-none" @click="toggleDrawer">&times;</a>
 
-                <div class="drawer-item" v-for="v in menuElements">
-                    <a :href="v.href">{{ v.text }}</a>
+                <div class="drawer-item" v-for="e in menuElements" @click="drawerIsOpen = false">
+                    <a :href="e.href">{{ e.text }}</a>
                 </div>
             </div>
         </div>

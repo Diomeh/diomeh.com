@@ -44,7 +44,7 @@
 
         <div class="nav-menu">
             <span class="nav-button" @click="toggleDrawer">
-                <font-awesome-icon icon="bars" />
+                <Icon icon="bars" />
             </span>
 
             <!-- TODO: add accessibility options. See https://developer.mozilla.org/en-US/docs/Web/CSS/transform#accessibility_concernss -->
